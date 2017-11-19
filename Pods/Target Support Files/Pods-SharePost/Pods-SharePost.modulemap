@@ -1,0 +1,6 @@
+framework module Pods_SharePost {
+  umbrella header "Pods-SharePost-umbrella.h"
+
+  export *
+  module * { export * }
+}

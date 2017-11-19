@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // app 登入登出狀態改變時會通知
+        Auth.auth().addIDTokenDidChangeListener { (auth, user) in
+            if let user = user {
+                print("使用者\(user.uid)剛登入")
+
+                if let viewController = storyboard.instantiateInitialViewController() {
+                    self.window?.rootViewController = viewController
+                }
+
+            }else{
+                print("未登入")
+                let viewController = storyboard.instantiateViewController(withIdentifier: "SignInOrSignUp")
+                self.window?.rootViewController = viewController
+            }
+        }
+        
         return true
     }
 

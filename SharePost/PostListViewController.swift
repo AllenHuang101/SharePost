@@ -35,7 +35,7 @@ class PostListViewController: UIViewController {
         
         firebaseRef = Database.database().reference().child("posts")
         
-        self.dataSource = self.postTableView.bind(to: firebaseRef) { tableView, indexPath, snap in
+        self.dataSource = self.postTableView.bind(to: firebaseRef.queryOrdered(byChild: "ReversePostDate")) { tableView, indexPath, snap in
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
             
             let postData = snap.value as! [String: Any]

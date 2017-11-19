@@ -149,7 +149,8 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             "imagePath" : postImagePath,
             "imageURL" : postImageUrl,
             "postMsg" : self.postTextView.text,
-            "postDate" : nowMS
+            "postDate" : nowMS,
+            "ReversePostDate":-nowMS
             ])
         
     }

@@ -1,20 +1,19 @@
 //
-//  PostCellTableViewCell.swift
+//  MessageCellTableViewCell.swift
 //  SharePost
 //
-//  Created by allen3_huang on 2017/11/3.
+//  Created by allen3_huang on 2017/12/2.
 //  Copyright © 2017年 allen3_huang. All rights reserved.
 //
 
 import UIKit
 
-class PostCell: UITableViewCell {
+class MessageCell: UITableViewCell {
 
-    @IBOutlet weak var messageButton: UIButton!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var photoImageView: UIImageView!
+  
+    @IBOutlet weak var replyerLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
-    @IBOutlet weak var postMessageLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

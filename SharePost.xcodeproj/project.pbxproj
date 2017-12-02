@@ -18,6 +18,8 @@
 		79747F981FA57F2800C9E727 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79747F971FA57F2800C9E727 /* SignInViewController.swift */; };
 		79747F9A1FA5939B00C9E727 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79747F991FA5939B00C9E727 /* PostViewController.swift */; };
 		79880D441FB6AFD4003B9715 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79880D431FB6AFD3003B9715 /* UITextView.swift */; };
+		798E93261FD2C37D005A111A /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798E93251FD2C37D005A111A /* MessageViewController.swift */; };
+		798E932A1FD2D6C8005A111A /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798E93291FD2D6C8005A111A /* MessageCell.swift */; };
 		79DE47881FACB3FF006AF15A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE47871FACB3FF006AF15A /* PostCell.swift */; };
 		79DE478C1FACB7C4006AF15A /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE478B1FACB7C4006AF15A /* PostListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		79747F971FA57F2800C9E727 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		79747F991FA5939B00C9E727 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		79880D431FB6AFD3003B9715 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		798E93251FD2C37D005A111A /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		798E93291FD2D6C8005A111A /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		79DE47871FACB3FF006AF15A /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		79DE478B1FACB7C4006AF15A /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		CBB0AE342F423E4579BD5059 /* Pods-SharePost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharePost.release.xcconfig"; path = "Pods/Target Support Files/Pods-SharePost/Pods-SharePost.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				79747F991FA5939B00C9E727 /* PostViewController.swift */,
 				79DE47871FACB3FF006AF15A /* PostCell.swift */,
 				79DE478B1FACB7C4006AF15A /* PostListViewController.swift */,
+				798E93251FD2C37D005A111A /* MessageViewController.swift */,
+				798E93291FD2D6C8005A111A /* MessageCell.swift */,
 			);
 			path = SharePost;
 			sourceTree = "<group>";
@@ -278,11 +284,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				79DE478C1FACB7C4006AF15A /* PostListViewController.swift in Sources */,
+				798E93261FD2C37D005A111A /* MessageViewController.swift in Sources */,
 				79880D441FB6AFD4003B9715 /* UITextView.swift in Sources */,
 				79747F7F1FA5780900C9E727 /* AppDelegate.swift in Sources */,
 				79747F961FA57B6000C9E727 /* SignUpViewController.swift in Sources */,
 				79747F9A1FA5939B00C9E727 /* PostViewController.swift in Sources */,
 				79DE47881FACB3FF006AF15A /* PostCell.swift in Sources */,
+				798E932A1FD2D6C8005A111A /* MessageCell.swift in Sources */,
 				79747F981FA57F2800C9E727 /* SignInViewController.swift in Sources */,
 				79747F871FA5780900C9E727 /* SharePost.xcdatamodeld in Sources */,
 			);

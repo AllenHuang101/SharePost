@@ -17,8 +17,9 @@ class PostListViewController: UIViewController {
     @IBOutlet weak var postTableView: UITableView!
     var firebaseRef: DatabaseReference!
     var dataSource: FUITableViewDataSource!
+    var postIdDict = [Int:String]()
+    var postDataDict = [Int: [String: Any]]()
     
-   
     @IBAction func logoutClick(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -39,25 +40,46 @@ class PostListViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
             
             let postData = snap.value as! [String: Any]
+    
             let imgUrl = URL(string: (postData["imageURL"] as? String)!)
             
             cell.emailLabel.text = postData["email"] as? String
             cell.photoImageView.sd_setImage(with: imgUrl)
             cell.postMessageLabel.text = postData["postMsg"] as? String
+            
+            self.postIdDict.updateValue(snap.key, forKey: indexPath.row)
+            self.postDataDict.updateValue(postData, forKey: indexPath.row)
+            
+            cell.messageButton.tag = indexPath.row
+            cell.messageButton.addTarget(self,action:#selector(PostListViewController.messageClick(_:)), for: .touchUpInside)
+            
             return cell
         }
         
     }
 
-
+    @objc func messageClick(_ sender: Any)
+    {
+        print("123")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "messageSegueIdentifier") {
+            let tag = (sender as! UIButton).tag
+            if let destination = segue.destination as? MessageViewController {
+                print(self.postIdDict[tag])
+                
+                destination.postId = self.postIdDict[tag]
+                destination.postData = self.postDataDict[tag]
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func postClick(_ sender: Any) {
-       
-    }
     /*
     // MARK: - Navigation
 

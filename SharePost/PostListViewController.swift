@@ -15,7 +15,7 @@ import SDWebImage
 class PostListViewController: UIViewController {
 
     @IBOutlet weak var postTableView: UITableView!
-    var firebaseRef: DatabaseReference!
+    var firebasePostsRef: DatabaseReference!
     var dataSource: FUITableViewDataSource!
     var postIdDict = [Int:String]()
     var postDataDict = [Int: [String: Any]]()
@@ -34,33 +34,43 @@ class PostListViewController: UIViewController {
         postTableView.estimatedRowHeight = 500
         postTableView.rowHeight = UITableViewAutomaticDimension
         
-        firebaseRef = Database.database().reference().child("posts")
+        firebasePostsRef = Database.database().reference().child("posts")
         
-        self.dataSource = self.postTableView.bind(to: firebaseRef.queryOrdered(byChild: "ReversePostDate")) { tableView, indexPath, snap in
+        self.dataSource = self.postTableView.bind(to: firebasePostsRef.queryOrdered(byChild: "ReversePostDate")) { tableView, indexPath, snap in
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
             
-            let postData = snap.value as! [String: Any]
+            let post = snap.value as! [String: Any]
     
-            let imgUrl = URL(string: (postData["imageURL"] as? String)!)
+            let imgUrl = URL(string: (post["imageURL"] as? String)!)
             
-            cell.emailLabel.text = postData["email"] as? String
+            if let authorUid = post["authorUID"] as? String {
+                let personalReference = Database.database().reference().child("personals").child(authorUid)
+                
+                personalReference.observeSingleEvent(of: .value, with: { (snap) in
+                    guard let personal = snap.value as? [String: Any] else{
+                        print("Error!")
+                        return
+                    }
+                    
+                    if let url = personal["personalImageUrl"] as? String {
+                        let imgUrl = URL(string: (personal["personalImageUrl"] as? String)!)
+                        cell.personalPhotoImageView.sd_setImage(with: imgUrl)
+                    }
+                })
+            }
+           
+            cell.emailLabel.text = post["email"] as? String
             cell.photoImageView.sd_setImage(with: imgUrl)
-            cell.postMessageLabel.text = postData["postMsg"] as? String
+            cell.postMessageLabel.text = post["postMsg"] as? String
             
             self.postIdDict.updateValue(snap.key, forKey: indexPath.row)
-            self.postDataDict.updateValue(postData, forKey: indexPath.row)
+            self.postDataDict.updateValue(post, forKey: indexPath.row)
             
             cell.messageButton.tag = indexPath.row
-            cell.messageButton.addTarget(self,action:#selector(PostListViewController.messageClick(_:)), for: .touchUpInside)
-            
+
             return cell
         }
         
-    }
-
-    @objc func messageClick(_ sender: Any)
-    {
-        print("123")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

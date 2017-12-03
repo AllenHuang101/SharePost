@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D23C83137D368CFCF7679DD /* Pods_SharePost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46CCF89371D15F4143F4BD6 /* Pods_SharePost.framework */; };
+		7951010C1FD392AC005532B9 /* PersonalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7951010B1FD392AC005532B9 /* PersonalProfileViewController.swift */; };
 		79747F7F1FA5780900C9E727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79747F7E1FA5780900C9E727 /* AppDelegate.swift */; };
 		79747F841FA5780900C9E727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79747F821FA5780900C9E727 /* Main.storyboard */; };
 		79747F871FA5780900C9E727 /* SharePost.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79747F851FA5780900C9E727 /* SharePost.xcdatamodeld */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		736B160C0BD98513FDE2B20A /* Pods-SharePost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharePost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SharePost/Pods-SharePost.debug.xcconfig"; sourceTree = "<group>"; };
+		7951010B1FD392AC005532B9 /* PersonalProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfileViewController.swift; sourceTree = "<group>"; };
 		79747F7B1FA5780900C9E727 /* SharePost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharePost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79747F7E1FA5780900C9E727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79747F831FA5780900C9E727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				79DE478B1FACB7C4006AF15A /* PostListViewController.swift */,
 				798E93251FD2C37D005A111A /* MessageViewController.swift */,
 				798E93291FD2D6C8005A111A /* MessageCell.swift */,
+				7951010B1FD392AC005532B9 /* PersonalProfileViewController.swift */,
 			);
 			path = SharePost;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				79880D441FB6AFD4003B9715 /* UITextView.swift in Sources */,
 				79747F7F1FA5780900C9E727 /* AppDelegate.swift in Sources */,
 				79747F961FA57B6000C9E727 /* SignUpViewController.swift in Sources */,
+				7951010C1FD392AC005532B9 /* PersonalProfileViewController.swift in Sources */,
 				79747F9A1FA5939B00C9E727 /* PostViewController.swift in Sources */,
 				79DE47881FACB3FF006AF15A /* PostCell.swift in Sources */,
 				798E932A1FD2D6C8005A111A /* MessageCell.swift in Sources */,

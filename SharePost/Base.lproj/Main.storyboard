@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="1060" y="38.23088455772114"/>
         </scene>
-        <!--Post List View Controller-->
+        <!--Item-->
         <scene sceneID="SbF-FL-Zzd">
             <objects>
                 <viewController id="Ah9-09-osb" customClass="PostListViewController" customModule="SharePost" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +184,6 @@
                                                     <rect key="frame" x="20" y="422" width="46" height="30"/>
                                                     <state key="normal" title="留言"/>
                                                     <connections>
-                                                        <action selector="messageClick:" destination="Ah9-09-osb" eventType="touchUpInside" id="KK6-cx-nUu"/>
                                                         <segue destination="kqd-Z7-DZt" kind="show" identifier="messageSegueIdentifier" id="IlZ-8t-lnX"/>
                                                     </connections>
                                                 </button>
@@ -207,6 +206,7 @@
                                         <connections>
                                             <outlet property="emailLabel" destination="uax-1D-SYt" id="fb9-CE-OlX"/>
                                             <outlet property="messageButton" destination="BIk-ub-LdW" id="9KO-uC-S8f"/>
+                                            <outlet property="personalPhotoImageView" destination="AJv-do-ZzX" id="uoR-Hy-To3"/>
                                             <outlet property="photoImageView" destination="2yf-5c-WG2" id="xct-M5-rHi"/>
                                             <outlet property="postMessageLabel" destination="Z4p-Je-ZqL" id="JbA-NN-pIu"/>
                                         </connections>
@@ -230,6 +230,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DHl-ln-2k8"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="L4p-Ch-aSg"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="QDQ-CM-vN2">
                         <barButtonItem key="rightBarButtonItem" title="登出" id="lHB-nf-aY6">
@@ -245,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubr-8t-NPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048.8" y="859.52023988005999"/>
+            <point key="canvasLocation" x="1388" y="859.52023988005999"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="XwC-qO-TIi">
@@ -256,7 +257,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eWM-KI-zAf">
-                                <rect key="frame" x="8" y="146" width="359" height="422"/>
+                                <rect key="frame" x="8" y="146" width="359" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="100" id="RvM-D5-j5Y" customClass="MessageCell" customModule="SharePost" customModuleProvider="target">
@@ -309,13 +310,13 @@
                                 </prototypes>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0cx-Pu-12e">
-                                <rect key="frame" x="8" y="576" width="320" height="31"/>
+                                <rect key="frame" x="8" y="527" width="320" height="31"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRU-4O-IY1">
-                                <rect key="frame" x="336" y="576" width="31" height="30"/>
+                                <rect key="frame" x="336" y="527" width="31" height="30"/>
                                 <state key="normal" title="留言"/>
                                 <connections>
                                     <action selector="messagePostClick:" destination="kqd-Z7-DZt" eventType="touchUpInside" id="l2s-fI-PhI"/>
@@ -371,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLJ-co-EqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181.5999999999999" y="1577.3613193403301"/>
+            <point key="canvasLocation" x="1388" y="1698"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="aMe-w9-c7f">
@@ -527,7 +528,7 @@
                                 </state>
                                 <connections>
                                     <action selector="publishPostClick:" destination="uGm-R7-5DT" eventType="touchUpInside" id="eYQ-f6-9D5"/>
-                                    <segue destination="Ah9-09-osb" kind="show" id="85S-6e-RfY"/>
+                                    <segue destination="1Rb-4y-60P" kind="show" id="85S-6e-RfY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -553,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRX-ka-BeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2065" y="860"/>
+            <point key="canvasLocation" x="2404" y="859.52023988005999"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xvu-h1-K5Z">
@@ -566,12 +567,107 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ah9-09-osb" kind="relationship" relationship="rootViewController" id="c74-Bo-63V"/>
+                        <segue destination="1Rb-4y-60P" kind="relationship" relationship="rootViewController" id="c74-Bo-63V"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhg-bL-ksQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="860"/>
+            <point key="canvasLocation" x="-577" y="860"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Z9S-YV-zSr">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1Rb-4y-60P" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="7bV-iG-CBE"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lVb-Gg-QYM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ah9-09-osb" kind="relationship" relationship="viewControllers" id="doc-dC-2Hk"/>
+                        <segue destination="zCd-Pm-gHT" kind="relationship" relationship="viewControllers" id="knk-NV-0qR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cM4-CW-m52" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="860"/>
+        </scene>
+        <!--個人檔案-->
+        <scene sceneID="E0z-oM-ebn">
+            <objects>
+                <viewController id="zCd-Pm-gHT" customClass="PersonalProfileViewController" customModule="SharePost" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2OL-UA-DIr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="f2f-uc-sfe">
+                                <rect key="frame" x="87.5" y="96" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="2kt-Ia-kf0"/>
+                                    <constraint firstAttribute="width" constant="200" id="Cda-cy-gcs"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRg-nL-IG2">
+                                <rect key="frame" x="87.5" y="96" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="hgY-U6-1w1"/>
+                                    <constraint firstAttribute="height" constant="200" id="xlK-a5-NJk"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="personalImageClick:" destination="zCd-Pm-gHT" eventType="touchUpInside" id="q8S-Q2-SsN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暱稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqN-UK-aaO">
+                                <rect key="frame" x="87" y="312" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0B-dz-AoF">
+                                <rect key="frame" x="87" y="350" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4G2-aF-Qe8"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbh-o3-cC2">
+                                <rect key="frame" x="87" y="554" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="登出"/>
+                                <connections>
+                                    <action selector="logoutClick:" destination="zCd-Pm-gHT" eventType="touchUpInside" id="9Sw-QF-Gwx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sqN-UK-aaO" firstAttribute="leading" secondItem="TRg-nL-IG2" secondAttribute="leading" id="1qm-kM-JYo"/>
+                            <constraint firstItem="TRg-nL-IG2" firstAttribute="top" secondItem="f2f-uc-sfe" secondAttribute="top" id="7Iu-QN-Aob"/>
+                            <constraint firstItem="F0B-dz-AoF" firstAttribute="leading" secondItem="sqN-UK-aaO" secondAttribute="leading" id="7ga-OC-CaZ"/>
+                            <constraint firstItem="F0B-dz-AoF" firstAttribute="top" secondItem="sqN-UK-aaO" secondAttribute="bottom" constant="17" id="9p3-Uq-4pC"/>
+                            <constraint firstItem="f2f-uc-sfe" firstAttribute="top" secondItem="amx-jH-x9p" secondAttribute="top" constant="32" id="Edg-2d-qfd"/>
+                            <constraint firstItem="TRg-nL-IG2" firstAttribute="centerX" secondItem="amx-jH-x9p" secondAttribute="centerX" id="Q6Y-P2-omV"/>
+                            <constraint firstItem="sqN-UK-aaO" firstAttribute="top" secondItem="TRg-nL-IG2" secondAttribute="bottom" constant="16" id="cjq-mN-zqx"/>
+                            <constraint firstItem="f2f-uc-sfe" firstAttribute="centerX" secondItem="amx-jH-x9p" secondAttribute="centerX" id="ije-bR-qcE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="amx-jH-x9p"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="個人檔案" id="RDJ-6U-NbE"/>
+                    <connections>
+                        <outlet property="personalImage" destination="f2f-uc-sfe" id="xa7-mg-oSZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3OC-tB-Gvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376.80000000000001" y="1655.6221889055473"/>
         </scene>
     </scenes>
     <resources>

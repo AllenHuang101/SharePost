@@ -63,9 +63,24 @@ class PostListViewController: UIViewController {
             cell.photoImageView.sd_setImage(with: imgUrl)
             cell.postMessageLabel.text = post["postMsg"] as? String
             
+            if let heartCount = post["heartCount"] as? Int {
+                cell.heartCountButton.isHidden = false
+                cell.heartCountTitleLabel.isHidden = false
+                cell.heartCountButton.setTitle("\(String(heartCount))", for: .normal)
+            }else{
+                //hide heart count
+                cell.heartCountTitleLabel.isHidden = true
+                cell.heartCountButton.isHidden = true
+            }
+            
             self.postIdDict.updateValue(snap.key, forKey: indexPath.row)
             self.postDataDict.updateValue(post, forKey: indexPath.row)
             
+            debugPrint(post)
+            
+            //post id
+            cell.postIdLabel.text = snap.key
+            cell.heartCountButton.tag = indexPath.row
             cell.messageButton.tag = indexPath.row
 
             return cell
@@ -81,6 +96,11 @@ class PostListViewController: UIViewController {
                 
                 destination.postId = self.postIdDict[tag]
                 destination.postData = self.postDataDict[tag]
+            }
+        }else if(segue.identifier == "heartSegueIdentifier") {
+            let tag = (sender as! UIButton).tag
+            if let destination = segue.destination as? HeartViewController {
+                destination.postId = self.postIdDict[tag]
             }
         }
     }
